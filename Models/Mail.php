@@ -2,13 +2,26 @@
 
     class Mail extends Sistema{
         private $allegato;
-        private $notifica;
+        public static $notifica = 'giallo';
 
-        function __construct($mittente, $destinatario, $oggetto, $contenuto, $suoneria, $allegato, $notifica){
-            parent::__construct($mittente, $destinatario, $oggetto, $contenuto, $suoneria);
+        function __construct($mittente, $destinatario, $oggetto, $contenuto, Allegato $allegato){
+            parent::__construct($mittente, $destinatario, $oggetto, $contenuto,);
             $this -> allegato = $allegato;
-            $this -> notifica = $notifica;
-        }   
+        }
+        
+        public static function getNotifica(){
+            return $this::notifica;
+        }
+    }
+
+    class Allegato{
+        private $formato;
+        private $tipo;
+
+        function __construct($formato, $tipo){
+            $this -> formato = $formato;
+            $this -> tipo = $tipo;
+        }
     }
 
 ?>

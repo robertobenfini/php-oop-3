@@ -5,9 +5,9 @@
         private $destinatario;
         private $oggetto;
         private $contenuto;
-        // private static $suoneria;
+        public static $suoneria = 'DRIIIN';
 
-        function __construct ($mittente, $destinatario, $oggetto, $contenuto, $suoneria){
+        function __construct ($mittente, $destinatario, $oggetto, $contenuto){
             $this -> mittente = $mittente;
             $this -> destinatario = $destinatario;
             $this -> oggetto = $oggetto;
@@ -31,9 +31,9 @@
             return $this->contenuto;
         }
 
-        // public function getSuoneria(){
-        //     return $this->suoneria;
-        // }
+        public static function getSuoneria(){
+            return $this::suoneria;
+        }
     }
 
 ?>
