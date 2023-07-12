@@ -4,9 +4,8 @@
         private $allegato;
         public static $notifica = 'giallo';
 
-        function __construct($mittente, $destinatario, $oggetto, $contenuto, Allegato $allegato){
+        function __construct($mittente, $destinatario, $oggetto, $contenuto,){
             parent::__construct($mittente, $destinatario, $oggetto, $contenuto);
-            $this -> allegato = $allegato;
         }
         
         public static function getNotifica(){
@@ -15,6 +14,14 @@
 
         public function Invio(){
             return 'Mail inviata';
+        }
+
+        public function setAllegato($allegato){
+            $this->allegato = $allegato;
+        }
+
+        public function getAllegato(){
+            return $this->allegato;
         }
     }
 
@@ -25,10 +32,6 @@
         function __construct($formato, $tipo){
             $this -> formato = $formato;
             $this -> tipo = $tipo;
-        }
-
-        public function getAllegato(){
-            return $this->allegato;
         }
     }
 
