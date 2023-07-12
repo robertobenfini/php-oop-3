@@ -12,7 +12,6 @@
             $this -> destinatario = $destinatario;
             $this -> oggetto = $oggetto;
             $this -> contenuto = $contenuto;
-            $this -> mittente = $mittente;
         }
 
         public function getMittente(){
@@ -33,6 +32,10 @@
 
         public static function getSuoneria(){
             return $this::suoneria;
+        }
+
+        public function Invio(){
+           return 'Contenuto inviato';
         }
     }
 
